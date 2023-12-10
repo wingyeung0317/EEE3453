@@ -1,0 +1,37 @@
+{
+    "version": 1,
+    "author": "Yeung Wing",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -283.3, "left": 43, "attrs": {} },
+      { "type": "wokwi-led", "id": "led1", "top": -234, "left": -53.8, "attrs": { "color": "red" } },
+      {
+        "type": "wokwi-resistor",
+        "id": "r1",
+        "top": -197.65,
+        "left": -19.2,
+        "attrs": { "value": "330" }
+      },
+      { "type": "wokwi-potentiometer", "id": "pot1", "top": -58.9, "left": 57.4, "attrs": {} },
+      {
+        "type": "wokwi-pushbutton",
+        "id": "btn1",
+        "top": -157,
+        "left": 172.8,
+        "attrs": { "color": "green" }
+      }
+    ],
+    "connections": [
+      [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+      [ "esp:D25", "r1:2", "green", [ "h0" ] ],
+      [ "r1:1", "led1:A", "green", [ "v0" ] ],
+      [ "esp:GND.2", "led1:C", "black", [ "h0" ] ],
+      [ "pot1:GND", "esp:GND.2", "black", [ "v9.6", "h-48", "v-153.6" ] ],
+      [ "pot1:SIG", "esp:VP", "green", [ "v19.2", "h-144.4", "v-268.8" ] ],
+      [ "pot1:VCC", "esp:3V3", "red", [ "v9.6", "h56.8", "v-144" ] ],
+      [ "esp:D15", "btn1:1.l", "green", [ "h0" ] ],
+      [ "esp:GND.1", "btn1:2.l", "black", [ "h0" ] ]
+    ],
+    "dependencies": {}
+  }
