@@ -1,0 +1,8 @@
+{
+    "version": 1,
+    "author": "Yeung Wing",
+    "editor": "wokwi",
+    "parts": [ { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -283.3, "left": 43, "attrs": {} } ],
+    "connections": [ [ "esp:TX0", "$serialMonitor:RX", "", [] ], [ "esp:RX0", "$serialMonitor:TX", "", [] ] ],
+    "dependencies": {}
+}
