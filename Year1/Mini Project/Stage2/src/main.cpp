@@ -1,3 +1,5 @@
+#include <Arduino.h>
+
 int step = 0;
 
 void setup(){
@@ -19,6 +21,7 @@ void loop(){
 
   while (Serial.available()!=0){
     input = (char)Serial.read();
+    delay(10);
     // const char* strarr = input.c_str();
     if (input == '\n' || i>=1200){
       step=1;
