@@ -5,6 +5,7 @@
 ## Project Stage 2's Application
 ##### [Intro]
 Construct an application using ESP32 micro-controller to include the sensor reading of temperature OR humidity as input, and display its value as output on an LCD display.
+[Wokwi Link: https://wokwi.com/projects/384427745444685825] (https://wokwi.com/projects/384427745444685825) 
 
 ## Project Stage 2's Program
 ##### [Intro]
