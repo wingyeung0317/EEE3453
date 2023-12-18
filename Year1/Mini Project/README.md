@@ -1,15 +1,28 @@
 # Project: 
 > Construct an application using ESP32 micro-controller to include the sensor reading of temperature OR humidity as input, and display its value as output on an LCD display. 
 > The application can either be built using simulation software or real circuit. Simulate all the input values (ignore the decimal values) in a program to read Integers from serial monitor input. Also, draft a proposal about how the application is designed (such as circuit and schematics) and can be used in real-life application (for example, smart home technologies, country parks, or any practical examples). Include the circuit and coding in the demonstration (screen capture / photo taking) to the lecturer.
+
+## Project Stage 2 Merged
+##### [Wokwi Link]
+[https://wokwi.com/projects/384474872821133313](https://wokwi.com/projects/384474872821133313)
+##### [Intro]
+Construct an application using ESP32 micro-controller to include the sensor reading of temperature OR humidity as input, and display its value as output on an LCD display.
+1. Define a new int array of 500 integers to store the data.
+2. Convert and store the temperature  and humidity data to the integers array.
+3. Display the size of the input data.
+4. Display the data nicely
+5. Stop capturing the data if the array is full.
+6. Find out and display the maximum value and its position (0-indexed) of first occurrence within the input.
+
 ---
-## Project Stage 2's Application
+
+### Project Stage 2's Application
 ##### [Workwi Link]
 [https://wokwi.com/projects/384427745444685825](https://wokwi.com/projects/384427745444685825) 
 ##### [Intro]
 Construct an application using ESP32 micro-controller to include the sensor reading of temperature OR humidity as input, and display its value as output on an LCD display.
 
-
-## Project Stage 2's Program
+### Project Stage 2's Program
 ##### [Wokwi Link]
 [https://wokwi.com/projects/384446477466744833](https://wokwi.com/projects/384446477466744833)
 ##### [Intro]
