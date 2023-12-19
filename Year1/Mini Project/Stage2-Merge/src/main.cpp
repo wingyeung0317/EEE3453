@@ -43,6 +43,7 @@ int positiontemp[2] = {0,0};
 int datahum[500] = {};
 int positionhum[2] = {0,0};
 
+// init ESP32
 void setup() {
   Serial.begin(115200);
   dhtSensor.setup(DHT_PIN, DHTesp::DHT22);
@@ -70,17 +71,16 @@ void loop() {
   lcd.setCursor(14, 1);
   lcd.print("%");
 
+  // Record Data
   dataTemp[dataarr] = int(round(data.temperature));
   datahum[dataarr] = int(round(data.humidity));
   dataarr++;
 
-  if(dataarr>500){
+  if(dataarr>500){ // Current: stop capturing when reach 500 data, uncomment follow code to recapture the data from 0.
       // /*recapturing the data from 0*/
       // dataarr=0;
-
       // positiontemp[0] = 0;
       // positiontemp[1] = 0;
-
       // positionhum[0] = 0;
       // positionhum[1] = 0;
   }else{
@@ -89,29 +89,37 @@ void loop() {
 
     Serial.print("Temp: ");
     for (int i = 0; i < dataarr; i++){
+      // Find out the lagest temperature
       if (dataTemp[i]>positiontemp[1]){
         positiontemp[0] = i;
         positiontemp[1] = dataTemp[i];
       }
+
+      // Print recorded temperature in a row
       Serial.print(String(dataTemp[i])+" ");
     }
 
     Serial.print("\nHumidity: ");
     for (int i = 0; i < dataarr; i++){
+      // Find out the lagest humidity
       if (datahum[i]>positionhum[1]){
         positionhum[0] = i;
         positionhum[1] = datahum[i];
       }
+
+      // Print recorded humidity in a row
       Serial.print(String(datahum[i])+" ");
     }
 
     if (dataarr == 0){
+      // if data not connected:
       Serial.println("\nMax: N/A");
       Serial.println("Max position (Start at 0): N/A");
     }else{
+      // Print the lagest temperature and humidity
       Serial.println("\nMax temperature: "+String(positiontemp[1]));
       Serial.println("Max temperature position (Start at 0): "+String(positiontemp[0]));
-      
+      // ---
       Serial.println("Max humidity: "+String(positionhum[1]));
       Serial.println("Max humidity position (Start at 0): "+String(positionhum[0]));
     }
